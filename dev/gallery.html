@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>homeassistant-analog-cards — gallery</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #e8e8e8;
+    margin: 0;
+    padding: 24px;
+  }
+  h1 { margin: 0 0 4px; }
+  h2 { margin: 32px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+  .intro { color: #555; max-width: 760px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .gallery-card { width: 200px; }
+  .controls {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .controls label { font-size: 0.85rem; }
+  .controls input[type="range"] { width: 220px; }
+</style>
+</head>
+<body>
+  <h1>homeassistant-analog-cards — gallery</h1>
+  <p class="intro">
+    Loads the combined <code>dist/analog-cards.js</code> bundle against mock <code>hass</code> objects.
+    <code>ha-card</code> and <code>ha-form</code> are stubbed here since they normally come from the real
+    Home Assistant frontend. Each section's slider drives a "spotlight" card live; the row below it shows
+    all 7 face styles at a fixed value for side-by-side comparison.
+  </p>
+
+  <h2>Barometer</h2>
+  <div class="controls">
+    <label>Pressure (hPa)
+      <input type="range" id="barometer-slider" min="940" max="1060" step="0.5" value="1013.2" />
+    </label>
+    <span id="barometer-value">1013.2 hPa</span>
+  </div>
+  <div class="row" id="barometer-spotlight"></div>
+  <div class="row" id="barometer-gallery" style="margin-top:16px"></div>
+
+  <h2>Thermometer — Radial</h2>
+  <div class="controls">
+    <label>Temperature (°C)
+      <input type="range" id="thermo-radial-slider" min="-20" max="45" step="0.5" value="22" />
+    </label>
+    <span id="thermo-radial-value">22 °C</span>
+  </div>
+  <div class="row" id="thermo-radial-spotlight"></div>
+  <div class="row" id="thermo-radial-gallery" style="margin-top:16px"></div>
+
+  <h2>Thermometer — Mercury</h2>
+  <div class="controls">
+    <label>Temperature (°C)
+      <input type="range" id="thermo-mercury-slider" min="-20" max="45" step="0.5" value="22" />
+    </label>
+    <span id="thermo-mercury-value">22 °C</span>
+  </div>
+  <div class="row" id="thermo-mercury-spotlight"></div>
+  <div class="row" id="thermo-mercury-gallery" style="margin-top:16px"></div>
+
+  <h2>Humidity — Radial</h2>
+  <div class="controls">
+    <label>Humidity (%)
+      <input type="range" id="humidity-slider" min="0" max="100" step="1" value="55" />
+    </label>
+    <span id="humidity-value">55 %</span>
+  </div>
+  <div class="row" id="humidity-spotlight"></div>
+  <div class="row" id="humidity-gallery" style="margin-top:16px"></div>
+
+  <h2>Clock</h2>
+  <p class="intro">Time-driven, not tied to any entity — hands tick live in every style below.</p>
+  <div class="row" id="clock-gallery"></div>
+
+<script type="module">
+  // --- Stubs for HA frontend elements not available outside real Home Assistant ---
+  class MockHaCard extends HTMLElement {
+    connectedCallback() {
+      Object.assign(this.style, {
+        display: 'block',
+        borderRadius: '12px',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
+        background: '#fff',
+        overflow: 'hidden',
+      });
+    }
+  }
+  customElements.define('ha-card', MockHaCard);
+
+  class MockHaForm extends HTMLElement {}
+  customElements.define('ha-form', MockHaForm);
+
+  import '../dist/analog-cards.js';
+
+  const FACE_STYLES = ['classic', 'silver', 'dark', 'light', 'led-backlit', 'fluorescent', 'futuristic'];
+
+  function makeHass(entityId, state, attributes, pastState) {
+    return {
+      language: 'en',
+      states: {
+        [entityId]: {
+          entity_id: entityId,
+          state: String(state),
+          last_changed: new Date().toISOString(),
+          last_updated: new Date().toISOString(),
+          attributes,
+        },
+      },
+      callApi: async () => [
+        [{ state: String(pastState), last_updated: new Date(Date.now() - 3 * 3600 * 1000).toISOString() }],
+      ],
+    };
+  }
+
+  function setupSection({ tag, entityId, attributes, sliderId, valueId, unit, spotlightId, galleryId, displayValue }) {
+    const slider = document.getElementById(sliderId);
+    const valueLabel = document.getElementById(valueId);
+    const spotlight = document.getElementById(spotlightId);
+    const gallery = document.getElementById(galleryId);
+
+    const spotlightCard = document.createElement(tag);
+    spotlightCard.setConfig({ type: `custom:${tag}`, entity: entityId, name: 'Live' });
+    spotlight.appendChild(spotlightCard);
+
+    function apply(value) {
+      valueLabel.textContent = `${displayValue ? displayValue(value) : value} ${unit}`;
+      spotlightCard.hass = makeHass(entityId, value, attributes, value);
+    }
+    apply(slider.value);
+    slider.addEventListener('input', () => apply(slider.value));
+
+    for (const style of FACE_STYLES) {
+      const wrap = document.createElement('div');
+      wrap.className = 'gallery-card';
+      const card = document.createElement(tag);
+      card.setConfig({ type: `custom:${tag}`, entity: entityId, name: style, face_style: style });
+      card.hass = makeHass(entityId, slider.value, attributes, slider.value);
+      wrap.appendChild(card);
+      gallery.appendChild(wrap);
+    }
+  }
+
+  setupSection({
+    tag: 'analog-barometer-card',
+    entityId: 'sensor.pressure',
+    attributes: { friendly_name: 'Outdoor Pressure', unit_of_measurement: 'hPa', device_class: 'atmospheric_pressure' },
+    sliderId: 'barometer-slider',
+    valueId: 'barometer-value',
+    unit: 'hPa',
+    spotlightId: 'barometer-spotlight',
+    galleryId: 'barometer-gallery',
+  });
+
+  setupSection({
+    tag: 'analog-thermometer-radial-card',
+    entityId: 'sensor.temp_radial',
+    attributes: { friendly_name: 'Living Room', unit_of_measurement: '°C', device_class: 'temperature' },
+    sliderId: 'thermo-radial-slider',
+    valueId: 'thermo-radial-value',
+    unit: '°C',
+    spotlightId: 'thermo-radial-spotlight',
+    galleryId: 'thermo-radial-gallery',
+  });
+
+  setupSection({
+    tag: 'analog-thermometer-mercury-card',
+    entityId: 'sensor.temp_mercury',
+    attributes: { friendly_name: 'Outside', unit_of_measurement: '°C', device_class: 'temperature' },
+    sliderId: 'thermo-mercury-slider',
+    valueId: 'thermo-mercury-value',
+    unit: '°C',
+    spotlightId: 'thermo-mercury-spotlight',
+    galleryId: 'thermo-mercury-gallery',
+  });
+
+  setupSection({
+    tag: 'analog-humidity-radial-card',
+    entityId: 'sensor.humidity',
+    attributes: { friendly_name: 'Basement', unit_of_measurement: '%', device_class: 'humidity' },
+    sliderId: 'humidity-slider',
+    valueId: 'humidity-value',
+    unit: '%',
+    spotlightId: 'humidity-spotlight',
+    galleryId: 'humidity-gallery',
+  });
+
+  const clockGallery = document.getElementById('clock-gallery');
+  for (const style of FACE_STYLES) {
+    const wrap = document.createElement('div');
+    wrap.className = 'gallery-card';
+    const card = document.createElement('analog-clock-card');
+    card.setConfig({ type: 'custom:analog-clock-card', name: style, face_style: style });
+    wrap.appendChild(card);
+    clockGallery.appendChild(wrap);
+  }
+</script>
+</body>
+</html>

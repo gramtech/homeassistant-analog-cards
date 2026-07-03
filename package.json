@@ -1,0 +1,28 @@
+{
+  "name": "homeassistant-analog-cards",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A family of Home Assistant Lovelace custom cards styled as realistic analog instruments.",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=analog-cards-core && npm run build --workspace=analog-barometer-card && npm run build --workspace=analog-thermometer-radial-card && npm run build --workspace=analog-thermometer-mercury-card && npm run build --workspace=analog-humidity-radial-card && npm run build --workspace=analog-clock-card && npm run build --workspace=analog-cards-bundle",
+    "watch": "npm run watch --workspaces --if-present",
+    "lint": "eslint packages/*/src --ext .ts",
+    "typecheck": "npm run build --workspace=analog-cards-core && npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^8.57.1",
+    "rollup": "^4.27.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "analog-cards-bundle",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Combined HACS bundle: registers every card in this repo from a single Lovelace resource.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "rollup": "^4.27.4",
+    "typescript": "^5.6.3"
+  }
+}

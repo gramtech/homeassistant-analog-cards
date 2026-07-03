@@ -1,0 +1,9 @@
+node_modules/
+dist-ts/
+*.log
+.DS_Store
+
+# core is an internal-only package: its dist/ is a pure build artifact
+# (unlike the card packages' dist/, which is the HACS-installable output),
+# always regenerated first by the root build/typecheck scripts.
+packages/core/dist/

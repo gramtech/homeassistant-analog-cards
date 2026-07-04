@@ -193,10 +193,10 @@ export class AnalogThermometerMercuryCard extends LitElement {
         stroke: var(--tube-glass-stroke);
         stroke-width: 1.5;
       }
-      .glass-bulb-ring {
-        fill: none;
-        stroke: var(--tube-glass-stroke);
+      .glass-highlight {
+        stroke: rgba(255, 255, 255, 0.45);
         stroke-width: 1.5;
+        stroke-linecap: round;
       }
       .bulb-highlight {
         fill: rgba(255, 255, 255, 0.5);
@@ -221,8 +221,7 @@ export class AnalogThermometerMercuryCard extends LitElement {
         stroke-width: 1.5;
         opacity: 0.55;
       }
-      .liquid,
-      .bulb {
+      .liquid {
         filter: var(--tube-liquid-filter);
       }
       .readout {

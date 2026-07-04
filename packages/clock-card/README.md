@@ -25,6 +25,23 @@ second_hand_motion: tick
 | `show_seconds` | boolean | `true` | Whether to render the second hand |
 | `second_hand_motion` | string | `tick` | `tick` (jumps once per second, like a quartz clock) or `sweep` (smooth continuous motion) |
 
+### Face styles
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="screenshots/theme-light.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
 ## Development
 
 See the repo root's `dev/gallery.html` and top-level `README.md`.

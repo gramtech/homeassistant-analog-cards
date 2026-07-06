@@ -6,6 +6,26 @@ sharing a consistent set of configurable "face styles" (`classic`, `silver`,
 `dark`, `light`, `led-backlit`, `fluorescent`, `futuristic`) across the whole
 family.
 
+## Screenshots
+
+<table>
+<tr>
+<td align="center">Barometer<br><img src="packages/barometer-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center">Thermometer (Radial)<br><img src="packages/thermometer-radial-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center">Thermometer (Mercury)<br><img src="packages/thermometer-mercury-card/screenshots/theme-classic.png" width="140"></td>
+</tr>
+<tr>
+<td align="center">Humidity (Radial)<br><img src="packages/humidity-radial-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center">Clock<br><img src="packages/clock-card/screenshots/theme-classic.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+All shown in the `classic` face style. Every card supports 7 face styles
+(`classic`, `silver`, `dark`, `light`, `led-backlit`, `fluorescent`,
+`futuristic`) on both light and dark Home Assistant themes — see each card's
+own README under `packages/<card>/README.md` for its full gallery.
+
 ## Cards in this repo
 
 | Card | Custom element | Form | Notes |

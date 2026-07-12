@@ -423,4 +423,4 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],t([gt({attribute:!1})],Xt.prototype,"hass",void 0),t([pt()],Xt.prototype,"_config",void 0),t([pt()],Xt.prototype,"_trendDirection",void 0),t([pt()],Xt.prototype,"_pastValueDisplay",void 0),Xt=t([ut(zt)],Xt),te={type:`custom:${zt}`,name:"Analog Barometer",description:"A classic analog-style barometer with pressure trend tracking."},window.customCards=window.customCards||[],window.customCards.push(te);export{Xt as AnalogBarometerCard};
+    `],t([gt({attribute:!1})],Xt.prototype,"hass",void 0),t([pt()],Xt.prototype,"_config",void 0),t([pt()],Xt.prototype,"_trendDirection",void 0),t([pt()],Xt.prototype,"_pastValueDisplay",void 0),Xt=t([ut(zt)],Xt),te={type:`custom:${zt}`,name:"Analog Barometer",preview:!1,description:"A classic analog-style barometer with pressure trend tracking."},window.customCards=window.customCards||[],window.customCards.push(te);export{Xt as AnalogBarometerCard};

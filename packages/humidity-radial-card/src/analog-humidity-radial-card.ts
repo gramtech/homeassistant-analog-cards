@@ -271,5 +271,6 @@ declare global {
 registerCard({
   type: `custom:${CARD_TAG}`,
   name: 'Analog Humidity (Radial)',
+  preview: false,
   description: 'A classic analog-style radial hygrometer dial with humidity trend tracking.',
 });

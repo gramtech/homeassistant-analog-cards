@@ -423,4 +423,4 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],t([gt({attribute:!1})],Jt.prototype,"hass",void 0),t([pt()],Jt.prototype,"_config",void 0),t([pt()],Jt.prototype,"_trendDirection",void 0),t([pt()],Jt.prototype,"_pastValueDisplay",void 0),Jt=t([ut(zt)],Jt),Zt={type:zt,name:"Analog Thermometer (Radial)",description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Zt);export{Jt as AnalogThermometerRadialCard};
+    `],t([gt({attribute:!1})],Jt.prototype,"hass",void 0),t([pt()],Jt.prototype,"_config",void 0),t([pt()],Jt.prototype,"_trendDirection",void 0),t([pt()],Jt.prototype,"_pastValueDisplay",void 0),Jt=t([ut(zt)],Jt),Zt={type:`custom:${zt}`,name:"Analog Thermometer (Radial)",description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Zt);export{Jt as AnalogThermometerRadialCard};

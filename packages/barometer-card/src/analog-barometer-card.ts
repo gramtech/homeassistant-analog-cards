@@ -276,7 +276,7 @@ declare global {
 }
 
 registerCard({
-  type: CARD_TAG,
+  type: `custom:${CARD_TAG}`,
   name: 'Analog Barometer',
   description: 'A classic analog-style barometer with pressure trend tracking.',
 });

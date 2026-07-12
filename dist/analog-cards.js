@@ -423,7 +423,7 @@ const ht=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],t([ft({attribute:!1})],Kt.prototype,"hass",void 0),t([gt()],Kt.prototype,"_config",void 0),t([gt()],Kt.prototype,"_trendDirection",void 0),t([gt()],Kt.prototype,"_pastValueDisplay",void 0),Kt=t([ht(Et)],Kt),Gt={type:`custom:${Et}`,name:"Analog Barometer",preview:!1,description:"A classic analog-style barometer with pressure trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Gt),"function"==typeof SuppressedError&&SuppressedError;
+    `],t([ft({attribute:!1})],Kt.prototype,"hass",void 0),t([gt()],Kt.prototype,"_config",void 0),t([gt()],Kt.prototype,"_trendDirection",void 0),t([gt()],Kt.prototype,"_pastValueDisplay",void 0),Kt=t([ht(Et)],Kt),Gt={type:Et,name:"Analog Barometer",preview:!1,description:"A classic analog-style barometer with pressure trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Gt),"function"==typeof SuppressedError&&SuppressedError;
 /**
  * @license
  * Copyright 2019 Google LLC
@@ -848,7 +848,7 @@ const ni=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],Jt([li({attribute:!1})],Ri.prototype,"hass",void 0),Jt([ci()],Ri.prototype,"_config",void 0),Jt([ci()],Ri.prototype,"_trendDirection",void 0),Jt([ci()],Ri.prototype,"_pastValueDisplay",void 0),Ri=Jt([ni(ki)],Ri),Li={type:`custom:${ki}`,name:"Analog Thermometer (Radial)",preview:!1,description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Li),"function"==typeof SuppressedError&&SuppressedError;
+    `],Jt([li({attribute:!1})],Ri.prototype,"hass",void 0),Jt([ci()],Ri.prototype,"_config",void 0),Jt([ci()],Ri.prototype,"_trendDirection",void 0),Jt([ci()],Ri.prototype,"_pastValueDisplay",void 0),Ri=Jt([ni(ki)],Ri),Li={type:ki,name:"Analog Thermometer (Radial)",preview:!1,description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Li),"function"==typeof SuppressedError&&SuppressedError;
 /**
  * @license
  * Copyright 2019 Google LLC
@@ -1263,7 +1263,7 @@ const Ys=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],Fi([tr({attribute:!1})],Cr.prototype,"hass",void 0),Fi([er()],Cr.prototype,"_config",void 0),Fi([er()],Cr.prototype,"_trendDirection",void 0),Fi([er()],Cr.prototype,"_pastValueDisplay",void 0),Cr=Fi([Ys(ur)],Cr),Pr={type:`custom:${ur}`,name:"Analog Thermometer (Mercury)",preview:!1,description:"A classic mercury-tube style thermometer with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Pr),"function"==typeof SuppressedError&&SuppressedError;
+    `],Fi([tr({attribute:!1})],Cr.prototype,"hass",void 0),Fi([er()],Cr.prototype,"_config",void 0),Fi([er()],Cr.prototype,"_trendDirection",void 0),Fi([er()],Cr.prototype,"_pastValueDisplay",void 0),Cr=Fi([Ys(ur)],Cr),Pr={type:ur,name:"Analog Thermometer (Mercury)",preview:!1,description:"A classic mercury-tube style thermometer with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Pr),"function"==typeof SuppressedError&&SuppressedError;
 /**
  * @license
  * Copyright 2019 Google LLC
@@ -1688,7 +1688,7 @@ const Fn=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],Ur([qn({attribute:!1})],mo.prototype,"hass",void 0),Ur([Bn()],mo.prototype,"_config",void 0),Ur([Bn()],mo.prototype,"_trendDirection",void 0),Ur([Bn()],mo.prototype,"_pastValueDisplay",void 0),mo=Ur([Fn(io)],mo),_o={type:`custom:${io}`,name:"Analog Humidity (Radial)",preview:!1,description:"A classic analog-style radial hygrometer dial with humidity trend tracking."},window.customCards=window.customCards||[],window.customCards.push(_o),"function"==typeof SuppressedError&&SuppressedError;
+    `],Ur([qn({attribute:!1})],mo.prototype,"hass",void 0),Ur([Bn()],mo.prototype,"_config",void 0),Ur([Bn()],mo.prototype,"_trendDirection",void 0),Ur([Bn()],mo.prototype,"_pastValueDisplay",void 0),mo=Ur([Fn(io)],mo),_o={type:io,name:"Analog Humidity (Radial)",preview:!1,description:"A classic analog-style radial hygrometer dial with humidity trend tracking."},window.customCards=window.customCards||[],window.customCards.push(_o),"function"==typeof SuppressedError&&SuppressedError;
 /**
  * @license
  * Copyright 2019 Google LLC
@@ -2048,4 +2048,4 @@ const Ua=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         stroke: var(--gauge-hub-stroke);
         stroke-width: 1;
       }
-    `],yo([Oa({attribute:!1})],Ya.prototype,"hass",void 0),Ya=yo([Ua(La)],Ya),Qa={type:`custom:${La}`,name:"Analog Clock",preview:!1,description:"A classic analog clock face with hour, minute, and second hands."},window.customCards=window.customCards||[],window.customCards.push(Qa);
+    `],yo([Oa({attribute:!1})],Ya.prototype,"hass",void 0),Ya=yo([Ua(La)],Ya),Qa={type:La,name:"Analog Clock",preview:!1,description:"A classic analog clock face with hour, minute, and second hands."},window.customCards=window.customCards||[],window.customCards.push(Qa);

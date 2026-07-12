@@ -149,7 +149,7 @@ declare global {
 }
 
 registerCard({
-  type: `custom:${CARD_TAG}`,
+  type: CARD_TAG,
   name: 'Analog Clock',
   preview: false,
   description: 'A classic analog clock face with hour, minute, and second hands.',

@@ -267,7 +267,7 @@ declare global {
 }
 
 registerCard({
-  type: `custom:${CARD_TAG}`,
+  type: CARD_TAG,
   name: 'Analog Thermometer (Mercury)',
   preview: false,
   description: 'A classic mercury-tube style thermometer with temperature trend tracking.',

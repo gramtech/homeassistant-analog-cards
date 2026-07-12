@@ -413,4 +413,4 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],t([gt({attribute:!1})],Zt.prototype,"hass",void 0),t([pt()],Zt.prototype,"_config",void 0),t([pt()],Zt.prototype,"_trendDirection",void 0),t([pt()],Zt.prototype,"_pastValueDisplay",void 0),Zt=t([ut(Ct)],Zt),Yt={type:Ct,name:"Analog Thermometer (Mercury)",description:"A classic mercury-tube style thermometer with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Yt);export{Zt as AnalogThermometerMercuryCard};
+    `],t([gt({attribute:!1})],Zt.prototype,"hass",void 0),t([pt()],Zt.prototype,"_config",void 0),t([pt()],Zt.prototype,"_trendDirection",void 0),t([pt()],Zt.prototype,"_pastValueDisplay",void 0),Zt=t([ut(Ct)],Zt),Yt={type:`custom:${Ct}`,name:"Analog Thermometer (Mercury)",description:"A classic mercury-tube style thermometer with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Yt);export{Zt as AnalogThermometerMercuryCard};

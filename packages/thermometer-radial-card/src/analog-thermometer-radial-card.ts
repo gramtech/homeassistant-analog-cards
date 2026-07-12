@@ -272,7 +272,7 @@ declare global {
 }
 
 registerCard({
-  type: CARD_TAG,
+  type: `custom:${CARD_TAG}`,
   name: 'Analog Thermometer (Radial)',
   description: 'A classic analog-style radial thermometer dial with temperature trend tracking.',
 });

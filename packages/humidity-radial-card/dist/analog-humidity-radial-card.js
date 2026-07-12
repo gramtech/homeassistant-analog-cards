@@ -423,4 +423,4 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         font-size: 1.1rem;
         line-height: 1;
       }
-    `],t([gt({attribute:!1})],Bt.prototype,"hass",void 0),t([pt()],Bt.prototype,"_config",void 0),t([pt()],Bt.prototype,"_trendDirection",void 0),t([pt()],Bt.prototype,"_pastValueDisplay",void 0),Bt=t([ut(Pt)],Bt),Wt={type:Pt,name:"Analog Humidity (Radial)",description:"A classic analog-style radial hygrometer dial with humidity trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Wt);export{Bt as AnalogHumidityRadialCard};
+    `],t([gt({attribute:!1})],Bt.prototype,"hass",void 0),t([pt()],Bt.prototype,"_config",void 0),t([pt()],Bt.prototype,"_trendDirection",void 0),t([pt()],Bt.prototype,"_pastValueDisplay",void 0),Bt=t([ut(Pt)],Bt),Wt={type:`custom:${Pt}`,name:"Analog Humidity (Radial)",description:"A classic analog-style radial hygrometer dial with humidity trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Wt);export{Bt as AnalogHumidityRadialCard};

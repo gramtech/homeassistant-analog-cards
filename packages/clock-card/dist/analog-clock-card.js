@@ -359,4 +359,4 @@ const pe=1;class be{constructor(e){}get _$AU(){return this._$AM._$AU}_$AT(e,t,s)
         stroke: var(--gauge-hub-stroke);
         stroke-width: 1;
       }
-    `],e([ge({attribute:!1})],Te.prototype,"hass",void 0),Te=e([de(Ae)],Te),Ne={type:Ae,name:"Analog Clock",description:"A classic analog clock face with hour, minute, and second hands."},window.customCards=window.customCards||[],window.customCards.push(Ne);export{Te as AnalogClockCard};
+    `],e([ge({attribute:!1})],Te.prototype,"hass",void 0),Te=e([de(Ae)],Te),Ne={type:`custom:${Ae}`,name:"Analog Clock",description:"A classic analog clock face with hour, minute, and second hands."},window.customCards=window.customCards||[],window.customCards.push(Ne);export{Te as AnalogClockCard};

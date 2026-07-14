@@ -8,23 +8,175 @@ family.
 
 ## Screenshots
 
+Every card supports 7 face styles (`classic`, `silver`, `dark`, `light`,
+`led-backlit`, `fluorescent`, `futuristic`) on both light and dark Home
+Assistant themes. The full set for each card is below (also viewable via
+`dev/gallery.html`, which isn't rendered by GitHub — see
+[Development](#development)).
+
+### Barometer
+
+On a light Home Assistant theme:
+
 <table>
 <tr>
-<td align="center">Barometer<br><img src="packages/barometer-card/screenshots/theme-classic.png" width="140"></td>
-<td align="center">Thermometer (Radial)<br><img src="packages/thermometer-radial-card/screenshots/theme-classic.png" width="140"></td>
-<td align="center">Thermometer (Mercury)<br><img src="packages/thermometer-mercury-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>classic</code><br><img src="packages/barometer-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/barometer-card/screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/barometer-card/screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/barometer-card/screenshots/theme-light.png" width="140"></td>
 </tr>
 <tr>
-<td align="center">Humidity (Radial)<br><img src="packages/humidity-radial-card/screenshots/theme-classic.png" width="140"></td>
-<td align="center">Clock<br><img src="packages/clock-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>led-backlit</code><br><img src="packages/barometer-card/screenshots/theme-led-backlit.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/barometer-card/screenshots/theme-fluorescent.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/barometer-card/screenshots/theme-futuristic.png" width="140"></td>
 <td></td>
 </tr>
 </table>
 
-All shown in the `classic` face style. Every card supports 7 face styles
-(`classic`, `silver`, `dark`, `light`, `led-backlit`, `fluorescent`,
-`futuristic`) on both light and dark Home Assistant themes — see each card's
-own README under `packages/<card>/README.md` for its full gallery.
+On a dark Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/barometer-card/screenshots/theme-classic-on-dark.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/barometer-card/screenshots/theme-silver-on-dark.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/barometer-card/screenshots/theme-dark-on-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/barometer-card/screenshots/theme-light-on-dark.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/barometer-card/screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/barometer-card/screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/barometer-card/screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+### Thermometer (Radial)
+
+On a light Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/thermometer-radial-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/thermometer-radial-card/screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/thermometer-radial-card/screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/thermometer-radial-card/screenshots/theme-light.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/thermometer-radial-card/screenshots/theme-led-backlit.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/thermometer-radial-card/screenshots/theme-fluorescent.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/thermometer-radial-card/screenshots/theme-futuristic.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+On a dark Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/thermometer-radial-card/screenshots/theme-classic-on-dark.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/thermometer-radial-card/screenshots/theme-silver-on-dark.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/thermometer-radial-card/screenshots/theme-dark-on-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/thermometer-radial-card/screenshots/theme-light-on-dark.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/thermometer-radial-card/screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/thermometer-radial-card/screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/thermometer-radial-card/screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+### Thermometer (Mercury)
+
+On a light Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-light.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-led-backlit.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-fluorescent.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-futuristic.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+On a dark Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-classic-on-dark.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-silver-on-dark.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-dark-on-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-light-on-dark.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/thermometer-mercury-card/screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+### Humidity (Radial)
+
+On a light Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/humidity-radial-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/humidity-radial-card/screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/humidity-radial-card/screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/humidity-radial-card/screenshots/theme-light.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/humidity-radial-card/screenshots/theme-led-backlit.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/humidity-radial-card/screenshots/theme-fluorescent.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/humidity-radial-card/screenshots/theme-futuristic.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+On a dark Home Assistant theme:
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/humidity-radial-card/screenshots/theme-classic-on-dark.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/humidity-radial-card/screenshots/theme-silver-on-dark.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/humidity-radial-card/screenshots/theme-dark-on-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/humidity-radial-card/screenshots/theme-light-on-dark.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/humidity-radial-card/screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/humidity-radial-card/screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/humidity-radial-card/screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+### Clock
+
+<table>
+<tr>
+<td align="center"><code>classic</code><br><img src="packages/clock-card/screenshots/theme-classic.png" width="140"></td>
+<td align="center"><code>silver</code><br><img src="packages/clock-card/screenshots/theme-silver.png" width="140"></td>
+<td align="center"><code>dark</code><br><img src="packages/clock-card/screenshots/theme-dark.png" width="140"></td>
+<td align="center"><code>light</code><br><img src="packages/clock-card/screenshots/theme-light.png" width="140"></td>
+</tr>
+<tr>
+<td align="center"><code>led-backlit</code><br><img src="packages/clock-card/screenshots/theme-led-backlit-on-dark.png" width="140"></td>
+<td align="center"><code>fluorescent</code><br><img src="packages/clock-card/screenshots/theme-fluorescent-on-dark.png" width="140"></td>
+<td align="center"><code>futuristic</code><br><img src="packages/clock-card/screenshots/theme-futuristic-on-dark.png" width="140"></td>
+<td></td>
+</tr>
+</table>
+
+Each card's own README under `packages/<card>/README.md` covers its
+configuration options in full.
 
 ## Cards in this repo
 

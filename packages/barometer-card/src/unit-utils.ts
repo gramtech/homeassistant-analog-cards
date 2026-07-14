@@ -31,6 +31,14 @@ export function convert(value: number, from: PressureUnit, to: PressureUnit): nu
   return convertFromHpa(convertToHpa(value, from), to);
 }
 
+/** Resolves the configured unit ('auto', or unset, means follow the entity's native unit). */
+export function resolveUnit(
+  configUnit: PressureUnit | 'auto' | undefined,
+  nativeUnit: PressureUnit
+): PressureUnit {
+  return configUnit && configUnit !== 'auto' ? configUnit : nativeUnit;
+}
+
 /** Detects display unit from the entity's unit_of_measurement, falling back to hPa. */
 export function detectUnit(hass: HomeAssistant, entityId: string): PressureUnit {
   const raw = hass.states[entityId]?.attributes?.unit_of_measurement;

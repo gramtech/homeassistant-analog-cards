@@ -12,7 +12,7 @@ export {
 export type TemperatureUnit = '°C' | '°F';
 
 export interface AnalogThermometerRadialCardConfig extends BaseCardConfig {
-  unit?: TemperatureUnit;
+  unit?: TemperatureUnit | 'auto';
   min?: number;
   max?: number;
   trend_hours?: number;

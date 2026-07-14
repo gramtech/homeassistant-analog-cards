@@ -12,6 +12,7 @@ entity: sensor.basement_humidity
 name: Basement
 trend_hours: 3
 trend_threshold: 3
+trend_text_size: large
 face_style: classic
 needle_color: "#333333"
 ```
@@ -26,6 +27,7 @@ needle_color: "#333333"
 | `max` | number | 100 | Upper bound of the dial scale |
 | `trend_hours` | number | 3 | How many hours back to look up for computing the trend |
 | `trend_threshold` | number | 3 (percentage points) | Minimum change over `trend_hours` to be considered rising/falling |
+| `trend_text_size` | string | `large` | Size of the rising/falling/steady text: `small`, `medium`, `large`, or `x-large` |
 | `face_style` | string | `classic` | Dial appearance: `classic`, `silver`, `dark`, `light`, `led-backlit`, `fluorescent`, or `futuristic` |
 | `needle_color` | string | set per `face_style` | CSS color for the needle; overrides the face style's default |
 

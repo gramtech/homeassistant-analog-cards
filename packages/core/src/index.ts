@@ -9,5 +9,6 @@ export * from './ha/editor-schema-helpers';
 export * from './ha/ticking-mixin';
 export * from './history/trend-tracker';
 export * from './theming/face-style';
+export * from './theming/trend-text-size';
 export * from './theming/radial-face-tokens.css';
 export * from './theming/tube-face-tokens.css';

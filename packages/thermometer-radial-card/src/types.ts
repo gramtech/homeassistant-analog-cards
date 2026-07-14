@@ -1,6 +1,13 @@
-import { BaseCardConfig, FaceStyle } from 'analog-cards-core';
+import { BaseCardConfig, FaceStyle, TrendTextSize } from 'analog-cards-core';
 
-export { HassEntity, HomeAssistant, fireEvent, FaceStyle, TrendDirection } from 'analog-cards-core';
+export {
+  HassEntity,
+  HomeAssistant,
+  fireEvent,
+  FaceStyle,
+  TrendDirection,
+  TrendTextSize,
+} from 'analog-cards-core';
 
 export type TemperatureUnit = '°C' | '°F';
 
@@ -10,6 +17,7 @@ export interface AnalogThermometerRadialCardConfig extends BaseCardConfig {
   max?: number;
   trend_hours?: number;
   trend_threshold?: number;
+  trend_text_size?: TrendTextSize;
   needle_color?: string;
   face_style?: FaceStyle;
 }

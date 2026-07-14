@@ -1,4 +1,5 @@
 import { FACE_STYLE_OPTIONS } from '../theming/face-style';
+import { TREND_TEXT_SIZE_OPTIONS } from '../theming/trend-text-size';
 
 /** An entity-picker field, e.g. `entityField('sensor')` restricts the picker to that domain. */
 export function entityField(domain: string) {
@@ -23,6 +24,11 @@ export function selectField(name: string, options: ReadonlyArray<{ value: string
 /** Shared face-style dropdown field, reused by every card's editor schema. */
 export function faceStyleField() {
   return selectField('face_style', FACE_STYLE_OPTIONS);
+}
+
+/** Shared trend-text-size dropdown field, reused by every card's editor schema. */
+export function trendSizeField() {
+  return selectField('trend_text_size', TREND_TEXT_SIZE_OPTIONS);
 }
 
 export function makeComputeLabel(

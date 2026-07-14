@@ -1,10 +1,18 @@
-import { entityField, faceStyleField, makeComputeLabel, numberField, textField } from 'analog-cards-core';
+import {
+  entityField,
+  faceStyleField,
+  makeComputeLabel,
+  numberField,
+  textField,
+  trendSizeField,
+} from 'analog-cards-core';
 
 export const SCHEMA = [
   entityField('sensor'),
   textField('name'),
   numberField('trend_hours', { min: 1, max: 12, step: 1 }),
   numberField('trend_threshold', { min: 0, step: 0.5 }),
+  trendSizeField(),
   faceStyleField(),
   textField('needle_color'),
 ] as const;
@@ -14,6 +22,7 @@ const LABELS: Record<string, string> = {
   name: 'Name (optional)',
   trend_hours: 'Trend lookback (hours)',
   trend_threshold: 'Trend threshold',
+  trend_text_size: 'Trend text size',
   face_style: 'Face style',
   needle_color: 'Needle color (optional, overrides face style default)',
 };

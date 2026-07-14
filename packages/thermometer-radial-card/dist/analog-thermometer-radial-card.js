@@ -46,7 +46,7 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const $t=(t=>(...e)=>({_$litDirective$:t,values:e}))(class extends mt{constructor(t){if(super(t),t.type!==bt||"class"!==t.name||t.strings?.length>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(t){return" "+Object.keys(t).filter(e=>t[e]).join(" ")+" "}update(t,[e]){if(void 0===this.st){this.st=new Set,void 0!==t.strings&&(this.nt=new Set(t.strings.join(" ").split(/\s/).filter(t=>""!==t)));for(const t in e)e[t]&&!this.nt?.has(t)&&this.st.add(t);return this.render(e)}const i=t.element.classList;for(const t of this.st)t in e||(i.remove(t),this.st.delete(t));for(const t in e){const s=!!e[t];s===this.st.has(t)||this.nt?.has(t)||(s?(i.add(t),this.st.add(t)):(i.remove(t),this.st.delete(t)))}return W}});function _t(t,e,i,s){const r=(s-90)*Math.PI/180;return{x:t+i*Math.cos(r),y:e+i*Math.sin(r)}}function yt(t,e,i,s,r){const n=_t(t,e,i,s),a=_t(t,e,i,r),o=r-s<=180?0:1;return`M ${n.x} ${n.y} A ${i} ${i} 0 ${o} 1 ${a.x} ${a.y}`}function kt(t,e,i,s){if(i<=e)return s.startAngle;let r;if(s.wrap){const s=i-e;r=((t-e)%s+s)%s/s}else{r=(Math.min(i,Math.max(e,t))-e)/(i-e)}return s.startAngle+r*s.sweepAngle}function vt(t,e,i,s,r){return function(t,e,i,s){if(i<=0||s<=0||e<=t)return[];const r=[],n=s/1e3;for(let a=t;a<=e+n;a+=s){const t=Math.round(a/s)*s,e=Math.abs(t/i-Math.round(t/i))<n;r.push({value:t,major:e})}return r}(t,e,i,s).map(i=>({...i,angle:kt(i.value,t,e,r)}))}const At=[{value:"classic",label:"Classic"},{value:"silver",label:"Silver"},{value:"dark",label:"Dark"},{value:"light",label:"Light"},{value:"led-backlit",label:"LED Backlit"},{value:"fluorescent",label:"Fluorescent"},{value:"futuristic",label:"Futuristic"}];function wt(t){return{name:t,selector:{text:{}}}}function xt(t,e){return{name:t,selector:{number:{...e,mode:"box"}}}}function Et(t,e){return{name:t,selector:{select:{mode:"dropdown",options:e}}}}function St(t,e,i){const s=t-e;return Math.abs(s)<i?"steady":s>0?"rising":"falling"}class Ct{constructor(t,e,i=3e5){this.storageKeyPrefix=t,this.convert=e,this.throttleMs=i,this.cache=null,this.cachedEntityId=null,this.inFlight=null}storageKey(t){return`${this.storageKeyPrefix}${t}`}getCached(t){return this.cachedEntityId!==t&&(this.cachedEntityId=t,this.cache=function(t){try{const e=localStorage.getItem(t);return e?JSON.parse(e):null}catch{return null}}(this.storageKey(t))),this.cache}shouldFetch(t){const e=this.getCached(t);return!e||Date.now()-e.fetchedAt>this.throttleMs}update(t,e,i,s,r,n,a,o){const l=this.getCached(e);return this.inFlight||!this.shouldFetch(e)||(this.inFlight=async function(t,e,i){const s=`history/period/${new Date(Date.now()-36e5*i).toISOString()}?filter_entity_id=${encodeURIComponent(e)}&minimal_response&no_attributes`,r=await t.callApi("GET",s),n=r?.[0];if(!n?.length)return null;const a=n[0],o=a.state??a.s;if(void 0===o)return null;const l=parseFloat(o);return Number.isFinite(l)?l:null}(t,e,n).then(t=>{if(null===t)return{direction:"unknown",pastValueDisplay:null,fetchedAt:Date.now()};const e=this.convert(t,s,r);return{direction:St(i,e,a),pastValueDisplay:e,fetchedAt:Date.now()}}).catch(()=>({direction:l?.direction??"unknown",pastValueDisplay:l?.pastValueDisplay??null,fetchedAt:Date.now()})).then(t=>(this.cache=t,function(t,e){try{localStorage.setItem(t,JSON.stringify(e))}catch{}}(this.storageKey(e),t),this.inFlight=null,o?.(t),t))),l}}const Pt=a`
+ */const $t=(t=>(...e)=>({_$litDirective$:t,values:e}))(class extends mt{constructor(t){if(super(t),t.type!==bt||"class"!==t.name||t.strings?.length>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(t){return" "+Object.keys(t).filter(e=>t[e]).join(" ")+" "}update(t,[e]){if(void 0===this.st){this.st=new Set,void 0!==t.strings&&(this.nt=new Set(t.strings.join(" ").split(/\s/).filter(t=>""!==t)));for(const t in e)e[t]&&!this.nt?.has(t)&&this.st.add(t);return this.render(e)}const i=t.element.classList;for(const t of this.st)t in e||(i.remove(t),this.st.delete(t));for(const t in e){const s=!!e[t];s===this.st.has(t)||this.nt?.has(t)||(s?(i.add(t),this.st.add(t)):(i.remove(t),this.st.delete(t)))}return W}});function _t(t,e,i,s){const r=(s-90)*Math.PI/180;return{x:t+i*Math.cos(r),y:e+i*Math.sin(r)}}function yt(t,e,i,s,r){const n=_t(t,e,i,s),a=_t(t,e,i,r),o=r-s<=180?0:1;return`M ${n.x} ${n.y} A ${i} ${i} 0 ${o} 1 ${a.x} ${a.y}`}function kt(t,e,i,s){if(i<=e)return s.startAngle;let r;if(s.wrap){const s=i-e;r=((t-e)%s+s)%s/s}else{r=(Math.min(i,Math.max(e,t))-e)/(i-e)}return s.startAngle+r*s.sweepAngle}function vt(t,e,i,s,r){return function(t,e,i,s){if(i<=0||s<=0||e<=t)return[];const r=[],n=s/1e3;for(let a=t;a<=e+n;a+=s){const t=Math.round(a/s)*s,e=Math.abs(t/i-Math.round(t/i))<n;r.push({value:t,major:e})}return r}(t,e,i,s).map(i=>({...i,angle:kt(i.value,t,e,r)}))}const At=[{value:"classic",label:"Classic"},{value:"silver",label:"Silver"},{value:"dark",label:"Dark"},{value:"light",label:"Light"},{value:"led-backlit",label:"LED Backlit"},{value:"fluorescent",label:"Fluorescent"},{value:"futuristic",label:"Futuristic"}],wt=[{value:"small",label:"Small"},{value:"medium",label:"Medium"},{value:"large",label:"Large"},{value:"x-large",label:"Extra large"}],xt={small:.8,medium:.9,large:1.05,"x-large":1.2};function Et(t){return{name:t,selector:{text:{}}}}function St(t,e){return{name:t,selector:{number:{...e,mode:"box"}}}}function Ct(t,e){return{name:t,selector:{select:{mode:"dropdown",options:e}}}}function Pt(t,e,i){const s=t-e;return Math.abs(s)<i?"steady":s>0?"rising":"falling"}class zt{constructor(t,e,i=3e5){this.storageKeyPrefix=t,this.convert=e,this.throttleMs=i,this.cache=null,this.cachedEntityId=null,this.inFlight=null}storageKey(t){return`${this.storageKeyPrefix}${t}`}getCached(t){return this.cachedEntityId!==t&&(this.cachedEntityId=t,this.cache=function(t){try{const e=localStorage.getItem(t);return e?JSON.parse(e):null}catch{return null}}(this.storageKey(t))),this.cache}shouldFetch(t){const e=this.getCached(t);return!e||Date.now()-e.fetchedAt>this.throttleMs}update(t,e,i,s,r,n,a,o){const l=this.getCached(e);return this.inFlight||!this.shouldFetch(e)||(this.inFlight=async function(t,e,i){const s=`history/period/${new Date(Date.now()-36e5*i).toISOString()}?filter_entity_id=${encodeURIComponent(e)}&minimal_response&no_attributes`,r=await t.callApi("GET",s),n=r?.[0];if(!n?.length)return null;const a=n[0],o=a.state??a.s;if(void 0===o)return null;const l=parseFloat(o);return Number.isFinite(l)?l:null}(t,e,n).then(t=>{if(null===t)return{direction:"unknown",pastValueDisplay:null,fetchedAt:Date.now()};const e=this.convert(t,s,r);return{direction:Pt(i,e,a),pastValueDisplay:e,fetchedAt:Date.now()}}).catch(()=>({direction:l?.direction??"unknown",pastValueDisplay:l?.pastValueDisplay??null,fetchedAt:Date.now()})).then(t=>(this.cache=t,function(t,e){try{localStorage.setItem(t,JSON.stringify(e))}catch{}}(this.storageKey(e),t),this.inFlight=null,o?.(t),t))),l}}const Mt=a`
   .style-classic {
     --gauge-bezel-fill: #cfc3a5;
     --gauge-bezel-stroke: #7a6a45;
@@ -248,7 +248,7 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
     --tube-tick-label-fill: #7df9ff;
     --tube-liquid-filter: drop-shadow(0 0 3px #ff2fd0);
   }
-`;const zt="analog-thermometer-radial-card",Mt="analog-thermometer-radial-card-editor",Ut={classic:"#333333",silver:"#222222",dark:"#e8e8e8",light:"#333333","led-backlit":"#ff4d4d",fluorescent:"#baff29",futuristic:"#ff2fd0"},Ot={startAngle:-135,sweepAngle:270},Dt=[{key:"freezing",label:"Freezing",from:-20,to:0,color:"#2471a3"},{key:"cold",label:"Cold",from:0,to:15,color:"#5dade2"},{key:"comfortable",label:"Comfortable",from:15,to:25,color:"#4a7a3c"},{key:"warm",label:"Warm",from:25,to:32,color:"#c9a227"},{key:"hot",label:"Hot",from:32,to:45,color:"#b5651d"}],Tt={"°C":{major:10,minor:2},"°F":{major:20,minor:5}};function jt(t){return 9*t/5+32}function Nt(t,e){return"°F"===e?jt(t):t}function Ht(t,e,i){return e===i?t:Nt(function(t,e){return"°F"===e?function(t){return 5*(t-32)/9}(t):t}(t,e),i)}function Rt(t,e){const i=t.states[e]?.attributes?.unit_of_measurement;return i&&i.toLowerCase().includes("f")?"°F":"°C"}const Ft=100;function Lt(t){const{min:e,max:i,unit:s,value:r,pastValue:n,needleColor:a}=t;return B`
+`;const Ut="analog-thermometer-radial-card",Ot="analog-thermometer-radial-card-editor",Dt={classic:"#333333",silver:"#222222",dark:"#e8e8e8",light:"#333333","led-backlit":"#ff4d4d",fluorescent:"#baff29",futuristic:"#ff2fd0"},Tt={startAngle:-135,sweepAngle:270},jt=[{key:"freezing",label:"Freezing",from:-20,to:0,color:"#2471a3"},{key:"cold",label:"Cold",from:0,to:15,color:"#5dade2"},{key:"comfortable",label:"Comfortable",from:15,to:25,color:"#4a7a3c"},{key:"warm",label:"Warm",from:25,to:32,color:"#c9a227"},{key:"hot",label:"Hot",from:32,to:45,color:"#b5651d"}],Nt={"°C":{major:10,minor:2},"°F":{major:20,minor:5}};function Ht(t){return 9*t/5+32}function Rt(t,e){return"°F"===e?Ht(t):t}function Ft(t,e,i){return e===i?t:Rt(function(t,e){return"°F"===e?function(t){return 5*(t-32)/9}(t):t}(t,e),i)}function Lt(t,e){const i=t.states[e]?.attributes?.unit_of_measurement;return i&&i.toLowerCase().includes("f")?"°F":"°C"}const It=100;function Vt(t){const{min:e,max:i,unit:s,value:r,pastValue:n,needleColor:a}=t;return B`
     <svg viewBox="0 0 200 200" class="dial" role="img" aria-label="Thermometer dial">
       <defs>${B`
     <radialGradient id="gauge-silver-face" cx="35%" cy="30%" r="75%">
@@ -264,62 +264,62 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
       <stop offset="100%" stop-color="#e0e0e0" />
     </linearGradient>
   `}</defs>
-      <circle cx=${Ft} cy=${Ft} r="97" class="bezel" />
-      <circle cx=${Ft} cy=${Ft} r="90" class="face" />
-      ${function(t,e,i){return Dt.map(s=>{const r=Nt(s.from,i),n=Nt(s.to,i);if(n<=t||r>=e)return B``;const a=kt(r,t,e,Ot),o=kt(n,t,e,Ot);if(o<=a)return B``;const l=yt(Ft,Ft,86,a,o);return B`<path
+      <circle cx=${It} cy=${It} r="97" class="bezel" />
+      <circle cx=${It} cy=${It} r="90" class="face" />
+      ${function(t,e,i){return jt.map(s=>{const r=Rt(s.from,i),n=Rt(s.to,i);if(n<=t||r>=e)return B``;const a=kt(r,t,e,Tt),o=kt(n,t,e,Tt);if(o<=a)return B``;const l=yt(It,It,86,a,o);return B`<path
       d=${l}
       stroke=${s.color}
       stroke-width=${9}
       fill="none"
     />`})}(e,i,s)}
-      ${function(t,e,i){const{major:s,minor:r}=Tt[i];return vt(t,e,s,r,Ot).map(t=>{const e=t.major?8:4,i=_t(Ft,Ft,72-e,t.angle),s=_t(Ft,Ft,72,t.angle),r=B`<line
+      ${function(t,e,i){const{major:s,minor:r}=Nt[i];return vt(t,e,s,r,Tt).map(t=>{const e=t.major?8:4,i=_t(It,It,72-e,t.angle),s=_t(It,It,72,t.angle),r=B`<line
       x1=${i.x} y1=${i.y} x2=${s.x} y2=${s.y}
       class=${t.major?"tick tick-major":"tick tick-minor"}
-    />`;if(!t.major)return r;const n=_t(Ft,Ft,50,t.angle),a=B`<text x=${n.x} y=${n.y} class="tick-label" text-anchor="middle" dominant-baseline="middle">${Math.round(10*t.value)/10}</text>`;return B`${r}${a}`})}(e,i,s)}
-      ${function(t,e,i){return Dt.map(s=>{const r=Math.max(Nt(s.from,i),t),n=Math.min(Nt(s.to,i),e);if(n<=r)return B``;const a=kt(r,t,e,Ot),o=kt(n,t,e,Ot),l=`zone-label-path-${s.key}`,c=yt(Ft,Ft,77,a,o);return B`
+    />`;if(!t.major)return r;const n=_t(It,It,50,t.angle),a=B`<text x=${n.x} y=${n.y} class="tick-label" text-anchor="middle" dominant-baseline="middle">${Math.round(10*t.value)/10}</text>`;return B`${r}${a}`})}(e,i,s)}
+      ${function(t,e,i){return jt.map(s=>{const r=Math.max(Rt(s.from,i),t),n=Math.min(Rt(s.to,i),e);if(n<=r)return B``;const a=kt(r,t,e,Tt),o=kt(n,t,e,Tt),l=`zone-label-path-${s.key}`,c=yt(It,It,77,a,o);return B`
       <path id=${l} d=${c} fill="none" stroke="none" />
       <text class="zone-label" dominant-baseline="middle">
         <textPath href=${"#"+l} startOffset="50%" text-anchor="middle">${s.label}</textPath>
       </text>
     `})}(e,i,s)}
-      ${function(t,e,i){if(null===t)return B``;const s=kt(t,e,i,Ot),r=_t(Ft,Ft,88,s),n=_t(Ft,Ft,95,s);return B`<line
+      ${function(t,e,i){if(null===t)return B``;const s=kt(t,e,i,Tt),r=_t(It,It,88,s),n=_t(It,It,95,s);return B`<line
     x1=${r.x} y1=${r.y} x2=${n.x} y2=${n.y}
     class="trend-marker"
   />`}(n,e,i)}
-      ${function(t,e,i,s){if(null===t)return B``;const r=kt(t,e,i,Ot);return B`<g class="needle" transform="rotate(${r} ${Ft} ${Ft})">
+      ${function(t,e,i,s){if(null===t)return B``;const r=kt(t,e,i,Tt);return B`<g class="needle" transform="rotate(${r} ${It} ${It})">
     <polygon
-      points="${Ft},${38} ${97},${114} ${103},${114}"
+      points="${It},${38} ${97},${114} ${103},${114}"
       fill=${s}
     />
   </g>`}(r,e,i,a)}
-      <circle cx=${Ft} cy=${Ft} r="6" class="hub" />
+      <circle cx=${It} cy=${It} r="6" class="hub" />
     </svg>
-  `}const It=[(Vt="sensor",{name:"entity",selector:{entity:{domain:Vt}}}),wt("name"),Et("unit",[{value:"auto",label:"Auto-detect"},{value:"°C",label:"°C"},{value:"°F",label:"°F"}]),xt("trend_hours",{min:1,max:12,step:1}),xt("trend_threshold",{min:0,step:.1}),Et("face_style",At),wt("needle_color")];var Vt;const qt=(Bt={entity:"Temperature sensor entity",name:"Name (optional)",unit:"Display unit",trend_hours:"Trend lookback (hours)",trend_threshold:"Trend threshold",face_style:"Face style",needle_color:"Needle color (optional, overrides face style default)"},t=>Bt[t.name]??t.name);var Bt;let Wt=class extends ct{setConfig(t){this._config=t}render(){return this.hass&&this._config?q`
+  `}const qt=[(Bt="sensor",{name:"entity",selector:{entity:{domain:Bt}}}),Et("name"),Ct("unit",[{value:"auto",label:"Auto-detect"},{value:"°C",label:"°C"},{value:"°F",label:"°F"}]),St("trend_hours",{min:1,max:12,step:1}),St("trend_threshold",{min:0,step:.1}),Ct("trend_text_size",wt),Ct("face_style",At),Et("needle_color")];var Bt;const Wt=(Kt={entity:"Temperature sensor entity",name:"Name (optional)",unit:"Display unit",trend_hours:"Trend lookback (hours)",trend_threshold:"Trend threshold",trend_text_size:"Trend text size",face_style:"Face style",needle_color:"Needle color (optional, overrides face style default)"},t=>Kt[t.name]??t.name);var Kt;let Gt=class extends ct{setConfig(t){this._config=t}render(){return this.hass&&this._config?q`
       <ha-form
         .hass=${this.hass}
         .data=${this._config}
-        .schema=${It}
-        .computeLabel=${qt}
+        .schema=${qt}
+        .computeLabel=${Wt}
         @value-changed=${this._valueChanged}
       ></ha-form>
-    `:q``}_valueChanged(t){!function(t,e,i={},s={}){const r=new CustomEvent(e,{bubbles:s.bubbles??!0,cancelable:s.cancelable??!1,composed:s.composed??!0,detail:i});t.dispatchEvent(r)}(this,"config-changed",{config:t.detail.value})}};t([gt({attribute:!1})],Wt.prototype,"hass",void 0),t([pt()],Wt.prototype,"_config",void 0),Wt=t([ut(Mt)],Wt);const Kt={rising:"↑",falling:"↓",steady:"→",unknown:""},Gt={rising:"Rising",falling:"Falling",steady:"Steady",unknown:""};let Jt=class extends ct{constructor(){super(...arguments),this._trendDirection="unknown",this._pastValueDisplay=null,this._tracker=new Ct("analog-thermometer-radial-card-trend-",Ht,3e5),this._lastEntityUpdate=null}setConfig(t){if(!t.entity)throw new Error("You must specify a temperature sensor entity.");this._config=t}getCardSize(){return 4}static getConfigElement(){return document.createElement(Mt)}static getStubConfig(t){const e=Object.values(t?.states??{}).find(t=>t.entity_id.startsWith("sensor.")&&"temperature"===t.attributes.device_class);return{type:"custom:analog-thermometer-radial-card",entity:e?.entity_id??""}}willUpdate(t){t.has("hass")&&this._maybeUpdateTrend()}_maybeUpdateTrend(){if(!this.hass||!this._config?.entity)return;const t=this.hass.states[this._config.entity];if(!t)return;const e=parseFloat(t.state);if(!Number.isFinite(e))return;const i=Rt(this.hass,this._config.entity),s=this._config.unit??i,r=Ht(e,i,s),n=this._config.trend_hours??3,a=this._config.trend_threshold??("°F"===s?1.8:1);if(this._lastEntityUpdate===t.last_updated)return;this._lastEntityUpdate=t.last_updated;const o=this._tracker.update(this.hass,this._config.entity,r,i,s,n,a,t=>{this._trendDirection=t.direction,this._pastValueDisplay=t.pastValueDisplay});this._trendDirection=o?.direction??"unknown",this._pastValueDisplay=o?.pastValueDisplay??null}render(){if(!this._config||!this.hass)return q``;const t=this.hass.states[this._config.entity];if(!t)return q`<ha-card>
+    `:q``}_valueChanged(t){!function(t,e,i={},s={}){const r=new CustomEvent(e,{bubbles:s.bubbles??!0,cancelable:s.cancelable??!1,composed:s.composed??!0,detail:i});t.dispatchEvent(r)}(this,"config-changed",{config:t.detail.value})}};t([gt({attribute:!1})],Gt.prototype,"hass",void 0),t([pt()],Gt.prototype,"_config",void 0),Gt=t([ut(Ot)],Gt);const Jt={rising:"↑",falling:"↓",steady:"→",unknown:""},Zt={rising:"Rising",falling:"Falling",steady:"Steady",unknown:""};let Yt=class extends ct{constructor(){super(...arguments),this._trendDirection="unknown",this._pastValueDisplay=null,this._tracker=new zt("analog-thermometer-radial-card-trend-",Ft,3e5),this._lastEntityUpdate=null}setConfig(t){if(!t.entity)throw new Error("You must specify a temperature sensor entity.");this._config=t}getCardSize(){return 4}static getConfigElement(){return document.createElement(Ot)}static getStubConfig(t){const e=Object.values(t?.states??{}).find(t=>t.entity_id.startsWith("sensor.")&&"temperature"===t.attributes.device_class);return{type:"custom:analog-thermometer-radial-card",entity:e?.entity_id??""}}willUpdate(t){t.has("hass")&&this._maybeUpdateTrend()}_maybeUpdateTrend(){if(!this.hass||!this._config?.entity)return;const t=this.hass.states[this._config.entity];if(!t)return;const e=parseFloat(t.state);if(!Number.isFinite(e))return;const i=Lt(this.hass,this._config.entity),s=this._config.unit??i,r=Ft(e,i,s),n=this._config.trend_hours??3,a=this._config.trend_threshold??("°F"===s?1.8:1);if(this._lastEntityUpdate===t.last_updated)return;this._lastEntityUpdate=t.last_updated;const o=this._tracker.update(this.hass,this._config.entity,r,i,s,n,a,t=>{this._trendDirection=t.direction,this._pastValueDisplay=t.pastValueDisplay});this._trendDirection=o?.direction??"unknown",this._pastValueDisplay=o?.pastValueDisplay??null}render(){if(!this._config||!this.hass)return q``;const t=this.hass.states[this._config.entity];if(!t)return q`<ha-card>
         <div class="warning">Entity not found: ${this._config.entity}</div>
-      </ha-card>`;const e=Rt(this.hass,this._config.entity),i=this._config.unit??e,s=parseFloat(t.state),r=Number.isFinite(s),n=r?Ht(s,e,i):null,a="°F"===i?{min:jt(-20),max:jt(45)}:{min:-20,max:45};const o=this._config.min??a.min,l=this._config.max??a.max,c=this._config.face_style??"classic",h=this._config.needle_color||Ut[c],u=this._config.name??t.attributes.friendly_name??this._config.entity;return q`
+      </ha-card>`;const e=Lt(this.hass,this._config.entity),i=this._config.unit??e,s=parseFloat(t.state),r=Number.isFinite(s),n=r?Ft(s,e,i):null,a="°F"===i?{min:Ht(-20),max:Ht(45)}:{min:-20,max:45};const o=this._config.min??a.min,l=this._config.max??a.max,c=this._config.face_style??"classic",h=this._config.needle_color||Dt[c],u=this._config.name??t.attributes.friendly_name??this._config.entity,d=xt[this._config.trend_text_size??"large"];return q`
       <ha-card>
         <div class=${$t({"card-content":!0,[`style-${c}`]:!0})}>
           <div class="title">${u}</div>
-          ${Lt({min:o,max:l,unit:i,value:n,pastValue:this._pastValueDisplay,needleColor:h})}
+          ${Vt({min:o,max:l,unit:i,value:n,pastValue:this._pastValueDisplay,needleColor:h})}
           <div class="readout">
             <span class="value">${r?n.toFixed(1):"--"}</span>
             <span class="unit">${i}</span>
           </div>
-          <div class="trend trend-${this._trendDirection}">
-            <span class="arrow">${Kt[this._trendDirection]}</span>
-            <span class="label">${Gt[this._trendDirection]}</span>
+          <div class="trend trend-${this._trendDirection}" style="font-size: ${d}rem">
+            <span class="arrow">${Jt[this._trendDirection]}</span>
+            <span class="label">${Zt[this._trendDirection]}</span>
           </div>
         </div>
       </ha-card>
-    `}};var Zt;Jt.styles=[Pt,a`
+    `}};var Qt;Yt.styles=[Mt,a`
       :host {
         display: block;
       }
@@ -407,7 +407,6 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         display: flex;
         align-items: center;
         gap: 4px;
-        font-size: 0.9rem;
         margin-top: 2px;
       }
       .trend-rising {
@@ -420,7 +419,7 @@ const ut=t=>(e,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(t,e)}
         color: #27633f;
       }
       .trend .arrow {
-        font-size: 1.1rem;
+        font-size: 1.2em;
         line-height: 1;
       }
-    `],t([gt({attribute:!1})],Jt.prototype,"hass",void 0),t([pt()],Jt.prototype,"_config",void 0),t([pt()],Jt.prototype,"_trendDirection",void 0),t([pt()],Jt.prototype,"_pastValueDisplay",void 0),Jt=t([ut(zt)],Jt),Zt={type:zt,name:"Analog Thermometer (Radial)",preview:!1,description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Zt);export{Jt as AnalogThermometerRadialCard};
+    `],t([gt({attribute:!1})],Yt.prototype,"hass",void 0),t([pt()],Yt.prototype,"_config",void 0),t([pt()],Yt.prototype,"_trendDirection",void 0),t([pt()],Yt.prototype,"_pastValueDisplay",void 0),Yt=t([ut(Ut)],Yt),Qt={type:Ut,name:"Analog Thermometer (Radial)",preview:!1,description:"A classic analog-style radial thermometer dial with temperature trend tracking."},window.customCards=window.customCards||[],window.customCards.push(Qt);export{Yt as AnalogThermometerRadialCard};

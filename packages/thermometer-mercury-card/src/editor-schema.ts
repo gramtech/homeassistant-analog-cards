@@ -5,6 +5,7 @@ import {
   numberField,
   selectField,
   textField,
+  trendSizeField,
 } from 'analog-cards-core';
 
 export const SCHEMA = [
@@ -17,6 +18,7 @@ export const SCHEMA = [
   ]),
   numberField('trend_hours', { min: 1, max: 12, step: 1 }),
   numberField('trend_threshold', { min: 0, step: 0.1 }),
+  trendSizeField(),
   faceStyleField(),
   textField('liquid_color'),
 ] as const;
@@ -27,6 +29,7 @@ const LABELS: Record<string, string> = {
   unit: 'Display unit',
   trend_hours: 'Trend lookback (hours)',
   trend_threshold: 'Trend threshold',
+  trend_text_size: 'Trend text size',
   face_style: 'Face style',
   liquid_color: 'Liquid color (optional, overrides face style default)',
 };

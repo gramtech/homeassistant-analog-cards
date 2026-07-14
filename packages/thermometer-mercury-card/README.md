@@ -13,6 +13,7 @@ name: Outside
 unit: °C
 trend_hours: 3
 trend_threshold: 1
+trend_text_size: large
 face_style: classic
 liquid_color: "#c0392b"
 ```
@@ -28,6 +29,7 @@ liquid_color: "#c0392b"
 | `max` | number | 45 °C / 113 °F | Top of the tube's scale |
 | `trend_hours` | number | 3 | How many hours back to look up for computing the trend |
 | `trend_threshold` | number | 1 °C (auto-scaled for °F) | Minimum change over `trend_hours` to be considered rising/falling |
+| `trend_text_size` | string | `large` | Size of the rising/falling/steady text: `small`, `medium`, `large`, or `x-large` |
 | `face_style` | string | `classic` | Tube appearance: `classic`, `silver`, `dark`, `light`, `led-backlit`, `fluorescent`, or `futuristic` |
 | `liquid_color` | string | set per `face_style` | CSS color for the liquid column and bulb; overrides the face style's default (`silver` uses a literal mercury tone) |
 

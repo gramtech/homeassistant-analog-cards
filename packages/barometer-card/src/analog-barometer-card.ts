@@ -1,7 +1,12 @@
 import { LitElement, PropertyValues, css, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { radialFaceTokens, registerCard } from 'analog-cards-core';
+import {
+  DEFAULT_TREND_TEXT_SIZE,
+  TREND_FONT_SIZE_REM,
+  radialFaceTokens,
+  registerCard,
+} from 'analog-cards-core';
 import {
   CARD_TAG,
   DEFAULT_FACE_STYLE,
@@ -133,6 +138,7 @@ export class AnalogBarometerCard extends LitElement {
     // nearly invisible against some faces).
     const needleColor = this._config.needle_color || NEEDLE_COLOR_BY_STYLE[faceStyle];
     const name = this._config.name ?? stateObj.attributes.friendly_name ?? this._config.entity;
+    const trendFontSize = TREND_FONT_SIZE_REM[this._config.trend_text_size ?? DEFAULT_TREND_TEXT_SIZE];
 
     return html`
       <ha-card>
@@ -150,7 +156,7 @@ export class AnalogBarometerCard extends LitElement {
             <span class="value">${hasValue ? currentDisplay!.toFixed(1) : '--'}</span>
             <span class="unit">${displayUnit}</span>
           </div>
-          <div class="trend trend-${this._trendDirection}">
+          <div class="trend trend-${this._trendDirection}" style="font-size: ${trendFontSize}rem">
             <span class="arrow">${TREND_ARROWS[this._trendDirection]}</span>
             <span class="label">${TREND_LABELS[this._trendDirection]}</span>
           </div>
@@ -249,7 +255,6 @@ export class AnalogBarometerCard extends LitElement {
         display: flex;
         align-items: center;
         gap: 4px;
-        font-size: 0.9rem;
         margin-top: 2px;
       }
       .trend-rising {
@@ -262,7 +267,7 @@ export class AnalogBarometerCard extends LitElement {
         color: #27633f;
       }
       .trend .arrow {
-        font-size: 1.1rem;
+        font-size: 1.2em;
         line-height: 1;
       }
     `,

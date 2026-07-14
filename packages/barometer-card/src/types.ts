@@ -12,7 +12,7 @@ export {
 export type PressureUnit = 'hPa' | 'inHg';
 
 export interface AnalogBarometerCardConfig extends BaseCardConfig {
-  unit?: PressureUnit;
+  unit?: PressureUnit | 'auto';
   min?: number;
   max?: number;
   trend_hours?: number;

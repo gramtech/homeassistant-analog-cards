@@ -17,7 +17,7 @@ import {
 import { renderDial } from './dial-render';
 import { createTrendTracker } from './trend';
 import { HomeAssistant, AnalogBarometerCardConfig, TrendDirection } from './types';
-import { convert, detectUnit, getDefaultRange, getDefaultThreshold } from './unit-utils';
+import { convert, detectUnit, getDefaultRange, getDefaultThreshold, resolveUnit } from './unit-utils';
 import './analog-barometer-card-editor';
 
 const TREND_ARROWS: Record<TrendDirection, string> = {
@@ -84,7 +84,7 @@ export class AnalogBarometerCard extends LitElement {
     if (!Number.isFinite(rawValue)) return;
 
     const nativeUnit = detectUnit(this.hass, this._config.entity);
-    const displayUnit = this._config.unit ?? nativeUnit;
+    const displayUnit = resolveUnit(this._config.unit, nativeUnit);
     const currentDisplay = convert(rawValue, nativeUnit, displayUnit);
     const hoursAgo = this._config.trend_hours ?? DEFAULT_TREND_HOURS;
     const threshold = this._config.trend_threshold ?? getDefaultThreshold(displayUnit);
@@ -122,7 +122,7 @@ export class AnalogBarometerCard extends LitElement {
     }
 
     const nativeUnit = detectUnit(this.hass, this._config.entity);
-    const displayUnit = this._config.unit ?? nativeUnit;
+    const displayUnit = resolveUnit(this._config.unit, nativeUnit);
     const rawValue = parseFloat(stateObj.state);
     const hasValue = Number.isFinite(rawValue);
     const currentDisplay = hasValue ? convert(rawValue, nativeUnit, displayUnit) : null;
